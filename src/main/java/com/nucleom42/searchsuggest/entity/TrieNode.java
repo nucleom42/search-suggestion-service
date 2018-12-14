@@ -1,12 +1,13 @@
-package others.trie;
+package com.nucleom42.searchsuggest.service;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class TrieNode {
   private String word;
   private Integer requests;
   private char chr;
-  private HashMap<Integer, TrieNode> children;
+  private Map<Integer, TrieNode> children;
 
   public TrieNode() {
     children = new HashMap<>();
@@ -24,11 +25,11 @@ public class TrieNode {
     this.requests = requests;
   }
 
-  public HashMap<Integer, TrieNode> getChildren() {
+  public Map<Integer, TrieNode> getChildren() {
     return children;
   }
 
-  public void setChildren(HashMap<Integer, TrieNode> children) {
+  public void setChildren(Map<Integer, TrieNode> children) {
     this.children = children;
   }
 

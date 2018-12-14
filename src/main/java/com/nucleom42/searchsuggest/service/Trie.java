@@ -1,7 +1,10 @@
-package others.trie;
+package com.nucleom42.searchsuggest.entity;
+
+import com.nucleom42.searchsuggest.service.TrieNode;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Trie {
 
@@ -26,7 +29,7 @@ public class Trie {
         TrieNode nodeToInsert = new TrieNode(word.charAt(i));
         if (i == len - 1) {
           nodeToInsert.setWord(word);
-          nodeToInsert.setRequests(requests); //TODO define how to get numbber of requests
+          nodeToInsert.setRequests(requests); // TODO define how to get numbber of requests
         }
         if (current.getChildren() == null) current.setChildren(new HashMap<>());
         current.getChildren().put(index, nodeToInsert);
@@ -37,7 +40,7 @@ public class Trie {
     }
   }
 
-  public ArrayList<TrieNode> findMostPopular(String prefix) {
+  public List<TrieNode> findMostPopular(String prefix) {
     TrieNode node = find(prefix);
     if (node == null) return new ArrayList<>();
     ArrayList<TrieNode> res = getChildrenWords(node, new ArrayList<>());
@@ -62,7 +65,7 @@ public class Trie {
   }
 
   public void traverse(TrieNode current) {
-   //TODO
+    // TODO
   }
 
   private TrieNode find(String searchWord) {
